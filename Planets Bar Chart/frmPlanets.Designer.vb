@@ -25,7 +25,7 @@ Partial Class frmPlanets
         Me.lstPlanets = New System.Windows.Forms.ListBox()
         Me.btnShow = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.lblPrgmr = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -48,6 +48,7 @@ Partial Class frmPlanets
         '
         'btnClear
         '
+        Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnClear.Location = New System.Drawing.Point(214, 373)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
@@ -55,14 +56,14 @@ Partial Class frmPlanets
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnExit
         '
-        Me.Button3.Location = New System.Drawing.Point(492, 373)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Exit"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnExit.Location = New System.Drawing.Point(492, 373)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.TabIndex = 3
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'lblPrgmr
         '
@@ -75,11 +76,13 @@ Partial Class frmPlanets
         '
         'frmPlanets
         '
+        Me.AcceptButton = Me.btnShow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnClear
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblPrgmr)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnShow)
         Me.Controls.Add(Me.lstPlanets)
@@ -93,6 +96,6 @@ Partial Class frmPlanets
     Friend WithEvents lstPlanets As ListBox
     Friend WithEvents btnShow As Button
     Friend WithEvents btnClear As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnExit As Button
     Friend WithEvents lblPrgmr As Label
 End Class
