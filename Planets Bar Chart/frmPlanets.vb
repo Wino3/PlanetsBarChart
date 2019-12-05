@@ -18,21 +18,26 @@ Public Class frmPlanets
             strPlanets = $"Planets: {strArrayPlanetNames(P)} Diameter:{intArrayPlanetSizes(P)}"
             lstPlanets.Items.Add(strPlanets)
 
-            GetDiameterAsAsterisks(intArrayPlanetSizes(P))
+            Dim strAstersks As String = GetDiameterAsAsterisks(intArrayPlanetSizes(P))
+
+            lstPlanets.Items.Add(strAstersks)
+
+
+
         Next
 
     End Sub
-    Function GetDiameterAsAsterisks(intDiameter As Integer) As String
+    Public Function GetDiameterAsAsterisks(intDiameter As Integer) As String
         Dim intNumAsterisks As Integer = intDiameter \ 1000
         Dim strResults As String = ""
         For A As Integer = 1 To intNumAsterisks
-            strResults = "*" & strResults
+            strResults = "*" + strResults
         Next
         Return strResults
 
     End Function
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        lstPlanets.ClearSelected()
+        lstPlanets.Items.Clear()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
